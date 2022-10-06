@@ -8,7 +8,9 @@ const App = () => {
   
     return (
         <div>
-            <CountButton />
+            <CountButton incrementBy={1}/>
+            <CountButton incrementBy={7}/>
+            <CountButton incrementBy={25}/>
         </div>
     )
   
