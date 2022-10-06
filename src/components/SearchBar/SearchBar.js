@@ -12,11 +12,13 @@ const SearchBar = () => {
         setSearchValue("")
     }
 
+    const shouldShowClearButton = searchValue.length > 0
 
     return (
     <div>
         <input type='text' value={searchValue} onChange={handleInputChange}/>
-        <button onClick={handleClearClick}>clear</button>
+        {shouldShowClearButton && <button onClick={handleClearClick}>clear</button> }
+   
     </div>
     )
 }
