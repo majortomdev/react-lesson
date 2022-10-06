@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './SearchBar.css'
 
 const SearchBar = () => {
-    const searchValue = 'the search value'
+    const [searchValue, setSearchValue] = useState("the search value")
 
     const handleInputChange = (event) => {
-        alert(event.target.value)//will print out the new value......
+        setSearchValue(event.target.value)
     }
 
 
     return (
     <div>
         <input type='text' value={searchValue} onChange={handleInputChange}/>
+        {searchValue}
     </div>
     )
 }
