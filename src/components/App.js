@@ -1,4 +1,5 @@
 import React from 'react'
+import CountButton from './CountButton'
 
 
 const App = () => {
@@ -6,11 +7,9 @@ const App = () => {
   
   
     return (
-      <ul>
-        <li>item1</li>
-        <li>item222 {myItem}</li>
-        <li>{myItem.toUpperCase()}</li>
-      </ul>
+        <div>
+            <CountButton />
+        </div>
     )
   
   }

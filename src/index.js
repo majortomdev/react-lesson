@@ -6,7 +6,6 @@ import { createRoot } from 'react-dom/client'
 
 const reactContentRoot = document.getElementById("root")
 
-console.log(App)
 
 // ReactDOM.render(<App />, reactContentRoot)
 const root = ReactDOM.createRoot(reactContentRoot)
