@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './CountButton.css'
 
 const CountButton = (props) => {
@@ -13,6 +13,13 @@ const CountButton = (props) => {
         background: props.buttonColour,
         border: "1px solid blue",
     }
+
+    useEffect(() => {
+        console.log("Use effect functn called")
+        if(currentCount===200){
+            setCurrentCount(0)
+        }
+    }, [currentCount])
 
     return (
         <div > 
