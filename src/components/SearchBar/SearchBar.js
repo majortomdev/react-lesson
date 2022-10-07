@@ -6,7 +6,9 @@ const products = [
     "glue",
     "plasticine",
     "wire",
-    "paste"
+    "paste",
+    "glueball",
+    "wirestrip"
 ]
 
 const SearchBar = () => {
@@ -22,15 +24,30 @@ const SearchBar = () => {
 
     const shouldShowClearButton = searchValue.length > 0
 
+    const filteredroducts = products.filter((product) => {
+            return product.includes(searchValue)
+        })
+    
+
+
     return (
     <div>
         <input type='text' value={searchValue} onChange={handleInputChange}/>
         {shouldShowClearButton && <button onClick={handleClearClick}>clear</button> }
-        <ul>
+
+
+        {/* <ul>
             {products.map((product) => {
             return<li key={product}>{product}</li>
         })}
+        </ul> */}
+
+        <ul>
+            {filteredroducts.map((product) => {
+            return<li key={product}>{product}</li>
+        })}
         </ul>
+
 
         
     </div>
