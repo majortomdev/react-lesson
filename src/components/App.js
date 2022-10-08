@@ -6,20 +6,31 @@ import SearchBar from './SearchBar/SearchBar'
 
 const App = () => {
     const [productsState, setProductsState] = useState([])
+
+    useEffect(() => {
+        fetch("https://fakestoreapi.com/products")
+        .then((res) => res.json())
+        .then((productsArray) => {
+            const newProductsState = productsArray.map((product) => {
+                return product.title
+            })
+            setProductsState(newProductsState)
+    })
+    },[])
   
-    useEffect(() => {//USE CASE 2
-        setTimeout(() => {
-            setProductsState([
-                "sellotape",
-                "glue",
-                "plasticine",
-                "wire",
-                "paste",
-                "glueball",
-                "wirestrip"
-            ])
-        }, 2000)
-    }, [])
+    // useEffect(() => {//USE CASE 2
+    //     setTimeout(() => {
+    //         setProductsState([
+    //             "sellotape",
+    //             "glue",
+    //             "plasticine",
+    //             "wire",
+    //             "paste",
+    //             "glueball",
+    //             "wirestrip"
+    //         ])
+    //     }, 2000)
+    // }, [])
   
     const hasProducts = productsState.length>0
 
